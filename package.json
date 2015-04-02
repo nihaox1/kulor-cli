@@ -1,5 +1,5 @@
 {
-    "name"          : "kulor",
+    "name"          : "kulor-cli",
     "version"       : "0.0.1" ,
     "author"        : {
         "name"      : "Bo.Cheng" ,
@@ -8,5 +8,8 @@
     "dependencies"  : {
         "grunt"     : "^0.4.0"
     } ,
-    "main"          : "./kulor.js"
+    "main"          : "./kulor.js" ,
+    "bin"           : {
+        "kulor"     : "./kulor.js"
+    }
 }
