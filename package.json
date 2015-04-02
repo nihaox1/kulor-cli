@@ -5,11 +5,16 @@
         "name"      : "Bo.Cheng" ,
         "email"     : "chen8114@sina.com"
     } ,
+    "engines"       : {
+        "node"      : ">= 0.8.0"
+    },
+    "man"           : "./helper.doc",
+    "bin"           : "./kulor" ,
+    "repository"    : { 
+        "type"      : "git" ,
+        "url"       : "https://github.com/nihaox1/kulor-cli.git"
+    } ,
     "dependencies"  : {
         "grunt"     : "^0.4.0"
-    } ,
-    "main"          : "./kulor.js" ,
-    "bin"           : {
-        "kulor"     : "./kulor"
-    }
+    } 
 }
