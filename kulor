@@ -1,12 +1,14 @@
 /**
  * Created by vip on 15/3/31.
  */
-var cmds    = require( "./util/cmds" );
+#!/usr/bin/env node
+
+var cmds    = require( "util/cmds" );
 
 function kulor(){
     this.options = {};
-    this.log    = require( "./util/log" );
-    this.grunt  = require( "./node_modules/grunt" );
+    this.log    = require( "util/log" );
+    this.grunt  = require( "node_modules/grunt" );
     this.cwd    = process.cwd();
 }
 

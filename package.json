@@ -10,6 +10,6 @@
     } ,
     "main"          : "./kulor.js" ,
     "bin"           : {
-        "kulor"     : "./kulor.js"
+        "kulor"     : "./kulor"
     }
 }
