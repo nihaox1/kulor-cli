@@ -1,0 +1,12 @@
+{
+    "name"          : "kulor",
+    "version"       : "0.0.1" ,
+    "author"        : {
+        "name"      : "Bo.Cheng" ,
+        "email"     : "chen8114@sina.com"
+    } ,
+    "dependencies"  : {
+        "grunt"     : "^0.4.0"
+    } ,
+    "main"          : "./kulor.js"
+}
