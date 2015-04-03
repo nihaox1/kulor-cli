@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+"use strict";
+
+process.title   = "kulor";
+
+var baseUrl = __dirname ,
+    cmds    = require( baseUrl + "/../util/cmds" );
+
+function kulor( libFolder ){
+    this.options = {
+        baseFolder  : libFolder + "/../"
+    };
+    this.log    = require( this.options.baseFolder + "util/log" );
+    this.grunt  = require( this.options.baseFolder + "node_modules/grunt" );
+    this.cwd    = process.cwd() + "/";
+}
+
+kulor.fn = kulor.prototype;
+
+kulor.fn.require = function( moduleName , newModuleName ){
+    this[ newModuleName || moduleName ] = require( "./lib/" + moduleName );
+    return this;
+};
+
+kulor.fn.init = function(){
+    var _cmd, _args;
+    this.package    = JSON.parse( this.grunt.file.read( this.options.baseFolder + "package.json" ) );
+    this.log( "kulor version :" + this.package.version );
+    if( process.argv.length > 3 ){
+        _cmd = cmds[ process.argv[ 3 ] ];
+        _args = Array.prototype.slice.call( process.argv ).slice( 4 );
+        if( _cmd ){
+            this.require( _cmd );
+            this[ _cmd].apply( this , _args );
+        }
+    }
+};
+
+new kulor( baseUrl ).init();

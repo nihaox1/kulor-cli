@@ -10,7 +10,7 @@
     },
     "man"           : "./helper.doc",
     "bin"           : {
-        "kulor"     : "./kulor" 
+        "kulor"     : "bin/kulor" 
     } ,
     "repository"    : { 
         "type"      : "git" ,
