@@ -8,9 +8,9 @@
     "engines"       : {
         "node"      : ">= 0.8.0"
     },
-    "man"           : "./helper.doc",
+    "man"           : "./doc.helper",
     "bin"           : {
-        "kulor"     : "./kulor" 
+        "kulor"     : "bin/kulor" 
     } ,
     "repository"    : { 
         "type"      : "git" ,
