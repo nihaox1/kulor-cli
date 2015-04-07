@@ -1,1 +1,17 @@
-kulor [init|install|help]
+kulor [init|install|help|plugin]
+
+kulor init
+    initiliaze kulor app env
+
+kulor install
+    kulor.json should be exsist
+    a kulor.json like:
+    {
+        "plugins"   : {
+            "kulor-plugin-panel"    : true ,
+            "kulor-plugin-dialog"   : "0.0.1"
+        }
+    }
+
+kulor plugin
+    help develeper create a kulor plugin

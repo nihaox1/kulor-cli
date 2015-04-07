@@ -7,5 +7,6 @@ module.exports = {
     "help"      : "help" ,
     "-help"     : "help" ,
     "--help"    : "help" ,
-    "-h"        : "help"
+    "-h"        : "help" ,
+    "plugin"    : "plugin"
 };
