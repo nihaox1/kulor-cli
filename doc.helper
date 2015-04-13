@@ -15,3 +15,5 @@ kulor install
 
 kulor plugin
     help develeper create a kulor plugin
+
+    -a  Add a plugin dependence
