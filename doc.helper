@@ -17,3 +17,4 @@ kulor plugin
     help develeper create a kulor plugin
 
     -a  Add a plugin dependence
+        "kulor plugin -a jQuery;jQuery-plugin-dialog"
