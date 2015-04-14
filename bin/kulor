@@ -4,14 +4,17 @@
 process.title   = "kulor";
 
 var baseUrl = __dirname ,
+    grunt   = require( "grunt" ),
+    nopt    = require( "nopt" ),
     cmds    = require( baseUrl + "/../util/cmds" );
 
 function kulor( libFolder ){
     this.options = {
-        baseFolder  : libFolder + "/../"
+        baseFolder  : libFolder + "/../" ,
+        hasInit     : false ,
+        inputOpts   : nopt( cmds.options , cmds.shortOpts , process.argv , 3 )
     };
     this.log    = require( this.options.baseFolder + "util/log" );
-    this.grunt  = require( this.options.baseFolder + "node_modules/grunt" );
     this.cwd    = process.cwd() + "/";
 }
 
@@ -24,10 +27,10 @@ kulor.fn.require = function( moduleName , newModuleName ){
 
 kulor.fn.init = function(){
     var _cmd, _args;
-    this.package    = JSON.parse( this.grunt.file.read( this.options.baseFolder + "package.json" ) );
+    this.package    = JSON.parse( grunt.file.read( this.options.baseFolder + "package.json" ) );
     this.log( "kulor version :" + this.package.version );
     if( process.argv.length >= 3 ){
-        _cmd = cmds[ process.argv[ 2 ] ];
+        _cmd = cmds.cmd[ process.argv[ 2 ] ];
         _args = Array.prototype.slice.call( process.argv ).slice( 3 );
         if( _cmd ){
             this.require( _cmd );

@@ -1,6 +1,6 @@
 {
     "name"          : "kulor-cli",
-    "version"       : "0.0.3" ,
+    "version"       : "0.0.17" ,
     "author"        : {
         "name"      : "Bo.Cheng" ,
         "email"     : "chen8114@sina.com"
@@ -17,7 +17,9 @@
         "url"       : "https://github.com/nihaox1/kulor-cli.git"
     } ,
     "dependencies"  : {
-        "grunt"     : "^0.4.0"
+        "grunt"         : "^0.4.0" ,
+        "nopt"          : "^3.0.1",
+        "inquirer"      : "^0.8.2"
     } ,
     "preferGlobal"  : true
 }
