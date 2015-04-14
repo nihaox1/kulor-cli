@@ -1,0 +1,17 @@
+{
+    "usage": [
+        "kulor <command> <args> <option>"
+    ],
+    "commands" : {
+        "init"      : "initiliaze kulor app env" ,
+        "install"   : "help developer install kulor plugin dependencies" ,
+        "plugin"    : "help developer create a kulor plugin"
+    } ,
+    "options": [
+        {
+            "shorthand":   "-h",
+            "flag":        "--help",
+            "description": "Show this help message"
+        }
+    ]
+}

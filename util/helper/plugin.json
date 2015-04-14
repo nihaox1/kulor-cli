@@ -1,0 +1,19 @@
+{
+    "command"     : "plugin",
+    "description" : "help developer create a kulor plugin.",
+    "usage"       : [
+        "kulor plugin [<args>] [<options>]"
+    ],
+    "options"     : [
+        {
+            "shorthand"   : "-h",
+            "flag"        : "--help",
+            "description" : "Show this help message"
+        } ,
+        {
+            "shorthand"   : "-a" ,
+            "flag"        : "--add" ,
+            "description" : "Add a plugin dependence"
+        }
+    ]
+}

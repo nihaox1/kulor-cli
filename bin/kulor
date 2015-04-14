@@ -30,11 +30,16 @@ kulor.fn.init = function(){
     this.package    = JSON.parse( grunt.file.read( this.options.baseFolder + "package.json" ) );
     if( process.argv.length >= 3 ){
         _cmd = cmds.cmd[ process.argv[ 2 ] ];
+        if( this.options.inputOpts.help ) {
+            _cmd    = "help";
+        }
         if( _cmd == "version" ){
             this.log( "kulor version :" + this.package.version );
         } else if( _cmd ){
             this.require( _cmd );
             this[ _cmd ].apply( this );
+        } else {
+            this.log( "Error commend input , run \"kulor -h\" for more" );
         }
     } else {
         this.log( "run \"kulor -h\" for more" );
