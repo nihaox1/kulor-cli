@@ -1,10 +1,12 @@
-kulor [init|install|help|plugin]
+
+kulor [init|install|help|plugin|version]
 
 kulor init
     initiliaze kulor app env
 
 kulor install
-    kulor.json should be exsist
+    help developer install kulor plugin dependencies
+    kulor.json should be exsist while no param input
     a kulor.json like:
     {
         "plugins"   : {
@@ -13,8 +15,12 @@ kulor install
         }
     }
 
+    -a add kulor plugin dependencies
+    a cmd like :
+        -a jQuery;kulor-plugin-panel#0.0.1;
+
 kulor plugin
-    help develeper create a kulor plugin
+    help developer create a kulor plugin
 
     -a  Add a plugin dependence
         "kulor plugin -a jQuery;jQuery-plugin-dialog"
