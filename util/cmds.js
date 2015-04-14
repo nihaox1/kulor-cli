@@ -21,5 +21,8 @@ module.exports.cmd = {
     "-help"     : "help" ,
     "--help"    : "help" ,
     "-h"        : "help" ,
-    "plugin"    : "plugin"
+    "plugin"    : "plugin" ,
+    "version"   : "version" ,
+    "-v"        : "version" ,
+    "-version"   : "version"
 }
