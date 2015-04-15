@@ -50,5 +50,22 @@ module.exports = {
             }
         } );
         return this;
+    } ,
+    /*!
+     *  check if has git
+     *  @param  callback    {fn}
+     *  @param  rtnErr      {boolean}
+     *  @return tool
+     */
+    checkGit : function( callback , rtnErr ){
+        cp.exec( "git --version" , {} , function( err ){
+            if( typeof callback == "function" && ( !rtnErr ) ){
+                callback( !err );
+            }
+            if( err ){
+                log( "git should be install..." );
+            }
+        } );
+        return this;
     }
 }
