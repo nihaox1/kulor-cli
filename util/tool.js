@@ -67,5 +67,8 @@ module.exports = {
             }
         } );
         return this;
+    } ,
+    getKeyName : function( str ){
+        return str.replace( /(.).*/ , "$1").toLocaleUpperCase() + str.replace( /./ , "" ).replace( /\..*$/ , "" );
     }
 }

@@ -5,6 +5,8 @@ module.exports.options   = {
     "init"        : Boolean ,
     "install"     : Boolean ,
     "plugin"      : Boolean ,
+    "makeConfig"  : Boolean ,
+    "mc"          : Boolean ,
     "help"        : Boolean ,
     "add"         : [ String , null ]
 }
@@ -24,5 +26,8 @@ module.exports.cmd = {
     "plugin"    : "plugin" ,
     "version"   : "version" ,
     "-v"        : "version" ,
-    "-version"   : "version"
+    "-version"   : "version" ,
+    "makeConfig" : "makeConfig" ,
+    "mkconfig"   : "makeConfig" ,
+    "mc"         : "makeConfig"
 }

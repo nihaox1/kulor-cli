@@ -5,7 +5,9 @@
     "commands" : {
         "init"      : "initiliaze kulor app env" ,
         "install"   : "help developer install kulor plugin dependencies" ,
-        "plugin"    : "help developer create a kulor plugin"
+        "makeConfig": "help developer create a requireConfig quickly" ,
+        "plugin"    : "help developer create a kulor plugin" ,
+        "version"   : "show kulor version"
     } ,
     "options": [
         {
