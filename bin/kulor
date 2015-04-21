@@ -14,8 +14,9 @@ function kulor( libFolder ){
         hasInit     : false ,
         inputOpts   : nopt( cmds.options , cmds.shortOpts , process.argv , 3 )
     };
-    this.log    = require( this.options.baseFolder + "util/log" );
-    this.cwd    = process.cwd() + "/";
+    this.log        = require( this.options.baseFolder + "util/log" );
+    this.cwd        = process.cwd() + "/";
+    this.bowerDir   = this.cwd + "bower_components/";
 }
 
 kulor.fn = kulor.prototype;
