@@ -1,0 +1,14 @@
+{
+    "command": "cache",
+    "description": "kulor cache",
+    "usage": [
+        "kulor cache"
+    ],
+    "options": [
+        {
+            "shorthand":   "-clean",
+            "flag":        "--clean",
+            "description": "clean kulor cache"
+        } 
+    ]
+}

@@ -8,12 +8,14 @@ module.exports.options   = {
     "makeConfig"  : Boolean ,
     "mc"          : Boolean ,
     "help"        : Boolean ,
+    "cache"       : Boolean ,
     "add"         : [ String , null ]
 }
 
 module.exports.shortOpts = {
     "-a"        : [ "add" , "--a" ] ,
-    "-h"        : [ "help" , "--h" , "-help" , "--help" ]
+    "-h"        : [ "help" , "--h" , "-help" , "--help" ] ,
+    "-clean"     : [ "clean" ]
 }
 
 module.exports.cmd = {
@@ -29,5 +31,6 @@ module.exports.cmd = {
     "-version"   : "version" ,
     "makeConfig" : "makeConfig" ,
     "mkconfig"   : "makeConfig" ,
-    "mc"         : "makeConfig"
+    "mc"         : "makeConfig" ,
+    "cache"      : "cache"
 }
