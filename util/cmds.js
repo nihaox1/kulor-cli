@@ -9,13 +9,14 @@ module.exports.options   = {
     "mc"          : Boolean ,
     "help"        : Boolean ,
     "cache"       : Boolean ,
+    "clean"       : Boolean ,
     "add"         : [ String , null ]
 }
 
 module.exports.shortOpts = {
-    "-a"        : [ "add" , "--a" ] ,
-    "-h"        : [ "help" , "--h" , "-help" , "--help" ] ,
-    "-clean"     : [ "clean" ]
+    "add"       : [ "add" , "--a" ] ,
+    "help"      : [ "help" , "--h" , "-help" , "--help" ] ,
+    "clean"     : [ "clean" , "-clean" , "--clean" ]
 }
 
 module.exports.cmd = {

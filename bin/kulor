@@ -6,15 +6,15 @@ process.title   = "kulor";
 var baseUrl = __dirname ,
     grunt   = require( "grunt" ),
     nopt    = require( "nopt" ),
+    log     = require( "../util/log" ),
     cmds    = require( baseUrl + "/../util/cmds" );
 
 function kulor( libFolder ){
     this.options = {
         baseFolder  : libFolder + "/../" ,
         hasInit     : false ,
-        inputOpts   : nopt( cmds.options , cmds.shortOpts , process.argv , 3 )
+        inputOpts   : nopt( cmds.options , cmds.shortOpts , process.argv , 2 )
     };
-    this.log        = require( this.options.baseFolder + "util/log" );
     this.cwd        = process.cwd() + "/";
     this.bowerDir   = this.cwd + "bower_components/";
 }
@@ -28,22 +28,22 @@ kulor.fn.require = function( moduleName , newoduleName ){
 
 kulor.fn.init = function(){
     var _cmd, _args;
-    this.package    = JSON.parse( grunt.file.read( this.options.baseFolder + "package.json" ) );
+    this.packageJson    = JSON.parse( grunt.file.read( this.options.baseFolder + "package.json" ) );
     if( process.argv.length >= 3 ){
         _cmd = cmds.cmd[ process.argv[ 2 ] ];
         if( this.options.inputOpts.help ) {
             _cmd    = "help";
         }
         if( _cmd == "version" ){
-            this.log( "kulor version :" + this.package.version );
+            log( "kulor version :" + this.packageJson.version );
         } else if( _cmd ){
             this.require( _cmd );
             this[ _cmd ].apply( this );
         } else {
-            this.log( "Error commend input , run \"kulor -h\" for more" );
+            log( "Error commend input , run \"kulor -h\" for more" );
         }
     } else {
-        this.log( "run \"kulor -h\" for more" );
+        log( "run \"kulor -h\" for more" );
     }
 };
 
