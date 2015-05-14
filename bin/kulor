@@ -1,37 +1,40 @@
 #!/usr/bin/env node  
 "use strict";
-
 process.title   = "kulor";
 
-var baseUrl = __dirname ,
-    grunt   = require( "grunt" ),
+var grunt   = require( "grunt" ),
     nopt    = require( "nopt" ),
     log     = require( "../util/log" ),
-    cmds    = require( baseUrl + "/../util/cmds" );
+    cmds    = require( "../util/cmds" );
 
-function kulor( libFolder ){
-    this.options = {
-        baseFolder  : libFolder + "/../" ,
-        hasInit     : false ,
-        inputOpts   : nopt( cmds.options , cmds.shortOpts , process.argv , 2 )
-    };
+function kulor(){
+    this.baseFolder = __dirname.replace( /[^\\|^\/]*$/ , "" );
+    this.inputOpts  = nopt( cmds.options , cmds.shortOpts , process.argv , 2 );
     this.cwd        = process.cwd() + "/";
     this.bowerDir   = this.cwd + "bower_components/";
+    this.packageJson= JSON.parse( grunt.file.read( this.baseFolder + "package.json" ) );
+    this.cacheDir   = this.baseFolder + "userCache/";
 }
 
 kulor.fn = kulor.prototype;
 
 kulor.fn.require = function( moduleName , newoduleName ){
-    this[ newoduleName || moduleName ] = require( this.options.baseFolder + "lib/" + moduleName );
+    var _modalName  = newoduleName || moduleName;
+    this[ _modalName ] = require( this.baseFolder + "lib/" + moduleName );
     return this;
 };
 
+kulor.fn.extend = function( json ){
+    for( var a in json ){
+        this[ a ] = json[ a ];
+    }
+}
+
 kulor.fn.init = function(){
-    var _cmd, _args;
-    this.packageJson    = JSON.parse( grunt.file.read( this.options.baseFolder + "package.json" ) );
+    var _cmd;
     if( process.argv.length >= 3 ){
         _cmd = cmds.cmd[ process.argv[ 2 ] ];
-        if( this.options.inputOpts.help ) {
+        if( this.inputOpts.help ) {
             _cmd    = "help";
         }
         if( _cmd == "version" ){
@@ -47,4 +50,4 @@ kulor.fn.init = function(){
     }
 };
 
-new kulor( baseUrl ).init();
+new kulor().init();

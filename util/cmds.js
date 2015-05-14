@@ -16,7 +16,8 @@ module.exports.options   = {
 module.exports.shortOpts = {
     "add"       : [ "add" , "--a" ] ,
     "help"      : [ "help" , "--h" , "-help" , "--help" ] ,
-    "clean"     : [ "clean" , "-clean" , "--clean" ]
+    "clean"     : [ "clean" , "-clean" , "--clean" ] ,
+    "makeConfig": [ "makeConfig" , "mc" , "mkconfig" ]
 }
 
 module.exports.cmd = {

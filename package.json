@@ -21,7 +21,9 @@
         "nopt"          : "^3.0.1",
         "inquirer"      : "^0.8.2" ,
         "nodeunit"      : "^0.9.1" ,
-        "underscore"    : "^1.8.3"
+        "underscore"    : "^1.8.3" ,
+        "bower"         : "^1.4.1" ,
+        "nodegit"       : "^0.4.0"
     } ,
     "preferGlobal"  : true
 }

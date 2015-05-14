@@ -1,10 +1,26 @@
 /**
  * Created by vip on 15/4/14.
  */
-var cp  = require( "child_process" ),
-    log = require( "./log" );
+var cp      = require( "child_process" ),
+    grunt   = require( "grunt" ) ,
+    log     = require( "./log" );
 
 module.exports = {
+    /*!
+     *  get user kulor json config
+     *  @return     {json}
+     */
+    getUserKulorJson    : function(){
+        var _file   = process.cwd() + "/kulor.json";
+        if( grunt.file.isFile( _file ) ){
+            return grunt.file.readJSON( _file );
+        } else {
+            return  {};
+        }
+    } ,
+    /*!
+     *  switch array to object
+     */
     arrayToObject : function( array ){
         var _rtn    = {},
             _val;
@@ -34,7 +50,7 @@ module.exports = {
         return _rtn;
     } ,
     /*!
-     *  check if has bower
+     *  check if has bower env
      *  @param  callback    {fn}
      *  @param  rtnErr      {boolean}
      *  @return tool
@@ -52,7 +68,7 @@ module.exports = {
         return this;
     } ,
     /*!
-     *  check if has git
+     *  check if has git env
      *  @param  callback    {fn}
      *  @param  rtnErr      {boolean}
      *  @return tool
@@ -68,7 +84,12 @@ module.exports = {
         } );
         return this;
     } ,
-    getKeyName : function( str ){
-        return str.replace( /(.).*/ , "$1").toLocaleUpperCase() + str.replace( /./ , "" ).replace( /\..*$/ , "" );
+    /*!
+     *  upper first litter for filename
+     *  @filename   {string}
+     *  @return     {string} 
+     */
+    getKeyName : function( filename ){
+        return filename.replace( /(.).*/ , "$1").toLocaleUpperCase() + filename.replace( /./ , "" ).replace( /\..*$/ , "" );
     }
 }
